@@ -9,6 +9,7 @@ import {GraphComponent} from './visuals/graph/graph.component';
 import {LinkVisualComponent} from './visuals/shared/link-visual.component';
 import {NodeVisualComponent} from './visuals/shared/node-visual.component';
 import {ZoomableDirective, DraggableDirective, D3Service} from './d3';
+import {ScatterPlot} from './visuals/scatterplot/scatterplot.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {ZoomableDirective, DraggableDirective, D3Service} from './d3';
     LinkVisualComponent,
     NodeVisualComponent,
     ZoomableDirective,
-    DraggableDirective
+    DraggableDirective,
+    ScatterPlot
   ],
   imports: [
     BrowserModule,
