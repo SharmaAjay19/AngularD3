@@ -24,8 +24,8 @@ export class ScatterPlot {
         };
         this.width = 500;
         this.height = 500;
-        console.log(this.xlabel);
-        console.log(this.points);
+        //console.log(this.xlabel);
+        //console.log(this.points);
     }
 
     ngAfterViewInit() {

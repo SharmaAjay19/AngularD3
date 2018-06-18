@@ -15,7 +15,7 @@ export class AppComponent {
 
   ngOnInit(){
     this.scatterPointList = new Array<ScatterPoint>();
-    for(var i=0; i<10; i++){
+    for(var i=0; i<200; i++){
       this.scatterPointList.push(new ScatterPoint(i, 2*i));
     }
   }

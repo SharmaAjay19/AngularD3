@@ -1,6 +1,6 @@
 <svg #svg [attr.width]="width" [attr.height]="height">
     <line x1="30" y1="500" x2="580" y2="500" style="stroke:rgb(255,0,0);stroke-width:2" />
     <line x1="30" y1="500" x2="30" y2="0" style="stroke:rgb(0,0,255);stroke-width:2" />
-    <text [attr.fill]="red" [attr.value]="xlabel">wowhello</text>
+    <svg:text x="200" y="200">{{xlabel}}</svg:text>
     <circle *ngFor="let point of points" [attr.cx]="point.x+30" [attr.cy]="500-point.y" r="3" stroke="black" stroke-width="0" fill="red" />-->
 </svg>
