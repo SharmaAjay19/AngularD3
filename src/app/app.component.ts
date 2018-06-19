@@ -14,9 +14,10 @@ export class AppComponent {
   }
 
   ngOnInit(){
+    var colors = ["red", "green", "blue", "magenta", "black"];
     this.scatterPointList = new Array<ScatterPoint>();
-    for(var i=0; i<200; i++){
-      this.scatterPointList.push(new ScatterPoint(i, 2*i));
+    for(var i=0; i<500; i++){
+      this.scatterPointList.push(new ScatterPoint(i, Math.floor(Math.random()*1000), colors[Math.floor(i/100)]));
     }
   }
 }
