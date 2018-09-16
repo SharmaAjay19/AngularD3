@@ -1,8 +1,9 @@
-<svg #svg [attr.width]="g_width" [attr.height]="g_height">
-    <line [attr.x1]="origin_x" [attr.y1]="origin_y" [attr.x2]="+origin_x + g_width" [attr.y2]="origin_y" style="stroke:rgb(255,0,0);stroke-width:2" />
-    <line [attr.x1]="origin_x" [attr.y1]="origin_y" [attr.x2]="origin_x" [attr.y2]="origin_y-g_height" style="stroke:rgb(0,0,255);stroke-width:2" />
-    <line *ngFor="let pos of x_markers_array" [attr.x1]="+origin_x + pos" [attr.y1]="+origin_y + 8" [attr.x2]="+origin_x + pos" [attr.y2]="origin_y" style="stroke:rgb(0,0,0);stroke-width:1" />
+<div><svg #svg [attr.width]="g_width" [attr.height]="g_height">
+    <line ngDraggable name="x-axis" [attr.x1]="origin_x" [attr.y1]="origin_y" [attr.x2]="+origin_x + g_width" [attr.y2]="origin_y" style="stroke:rgb(255,0,0);stroke-width:2" />
+    <line ngDraggable name="y-axis" [attr.x1]="origin_x" [attr.y1]="origin_y" [attr.x2]="origin_x" [attr.y2]="origin_y-g_height" style="stroke:rgb(0,0,255);stroke-width:2" />
+    <line name="x-axis-marker" *ngFor="let pos of x_markers_array" [attr.x1]="+origin_x + pos" [attr.y1]="+origin_y + 8" [attr.x2]="+origin_x + pos" [attr.y2]="origin_y" style="stroke:rgb(0,0,0);stroke-width:1" />
     <svg:text [attr.x]="+origin_x + (g_width/2)" [attr.y]="+origin_y + 20">{{xlabel}}</svg:text>
     <svg:text [attr.transform]="'translate(' + (origin_x-10) + ',' + (origin_y-(g_height/2)) + ')rotate(270)'">{{ylabel}}</svg:text>
-    <circle *ngFor="let point of points" [attr.cx]="+point.x + origin_x" [attr.cy]="origin_y-point.y" r="1" stroke="black" stroke-width="0" [attr.fill]="point.color" />
+    <circle name="plot-point" *ngFor="let point of points" [attr.cx]="+point.x + origin_x" [attr.cy]="origin_y-point.y" r="30" stroke="black" stroke-width="0" [attr.fill]="point.color" />
 </svg>
+</div>
